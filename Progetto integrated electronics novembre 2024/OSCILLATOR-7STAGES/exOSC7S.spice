@@ -1,0 +1,95 @@
+* SPICE3 file created from OSC7S.ext - technology: scmos
+
+.include ./Ami05u.txt
+.option scale=1u
+
+**** VDD ****
+
+Vpower VDD GND 3.3
+Ven EN GND pulse (0 3.3 1n 1n 1n 300n)  
+
+**************
+
+
+M1000 inverterX_1/IN inverterX_0/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=1264 ps=730
+M1001 inverterX_1/IN inverterX_0/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=400 ps=240
+M1002 inverterX_2/IN inverterX_1/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1003 inverterX_2/IN inverterX_1/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1004 inverterX_3/IN inverterX_2/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1005 inverterX_3/IN inverterX_2/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1006 inverterX_4/IN inverterX_3/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1007 inverterX_4/IN inverterX_3/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1008 OUTFinal inverterX_4/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1009 OUTFinal inverterX_4/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1010 inverterX_6/OUT inverterX_6/IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1011 inverterX_6/OUT inverterX_6/IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1012 inverterX_6/IN OUTFinal VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=0 ps=0
+M1013 inverterX_6/IN OUTFinal GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=0 ps=0
+M1014 inverterX_0/IN OUTFinal NANDXFin_0/a_n13_1# Gnd nfet w=10 l=2
++  ad=50 pd=30 as=60 ps=32
+M1015 NANDXFin_0/a_n13_1# EN GND Gnd nfet w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 VDD OUTFinal inverterX_0/IN Vdd pfet w=13 l=2
++  ad=0 pd=0 as=78 ps=38
+M1017 inverterX_0/IN EN VDD Vdd pfet w=13 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 GND Gnd 53.67fF
+C1 VDD Gnd 38.30fF
+C2 inverterX_0/IN Gnd 13.67fF
+C3 OUTFinal Gnd 27.05fF
+C4 EN Gnd 9.59fF
+C5 inverterX_6/IN Gnd 10.29fF
+C6 inverterX_4/IN Gnd 10.10fF
+C7 inverterX_3/IN Gnd 10.29fF
+C8 inverterX_2/IN Gnd 10.10fF
+C9 inverterX_1/IN Gnd 10.29fF
+
+****CLOAD****
+
+Cload OUTFinal GND 6.8fF
+
+****************
+
+.control
+
+*******IN/OUT************
+
+	tran 1p 600000p
+	plot EN OUTFinal
+	
+	
+******CURRENT PLOT*******
+******DYNAMIC POWER*******
+******STATIC POWER********
+******AVARAGE POWER********
+	
+	plot -i(Vpower)
+	meas tran idt INTEG i(Vpower) from=190.5n to=556.4n
+	
+
+	let dynamicPower = VDD*i(Vpower)
+	plot dynamicPower
+
+
+	let avaragePower = idt*VDD/556.4-190.5
+	plot avaragePower
+	
+
+***************************
+.endc
+.end
+*--------

@@ -1,0 +1,88 @@
+timestamp 1715205214
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+use NANDXFin NANDXFin_0 1 0 16 0 1 8
+use inverterX inverterX_0 1 0 40 0 1 14
+use inverterX inverterX_1 1 0 65 0 1 14
+use inverterX inverterX_2 1 0 90 0 1 14
+use inverterX inverterX_3 1 0 115 0 1 14
+use inverterX inverterX_4 1 0 140 0 1 14
+use inverterX inverterX_5 1 0 165 0 1 14
+use inverterX inverterX_6 1 0 190 0 1 14
+node "m1_171_0#" 0 1410 171 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_146_0#" 0 1692 146 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 36 24 0 0 0 0
+node "m1_121_0#" 0 1410 121 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_96_0#" 0 1410 96 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_71_0#" 0 1692 71 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 36 24 0 0 0 0
+node "m1_46_0#" 0 1410 46 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_15_0#" 0 3102 15 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 66 34 0 0 0 0
+node "m1_142_23#" 0 1880 142 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0
+node "m1_117_23#" 0 1692 117 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 36 26 0 0 0 0
+node "m1_92_23#" 0 1880 92 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0
+node "m1_67_23#" 0 1692 67 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 36 26 0 0 0 0
+node "m1_42_23#" 0 1880 42 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0
+node "m1_16_20#" 0 2679 16 20 m1 0 0 0 0 0 0 0 0 0 0 0 0 57 38 0 0 0 0
+node "OUTFinal" 1 15160 15 27 m1 0 0 0 0 0 0 0 0 0 0 0 0 80 56 632 324 0 0
+node "m1_171_64#" 0 1128 171 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 24 20 0 0 0 0
+node "m1_146_64#" 0 1410 146 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_121_64#" 0 1410 121 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_96_64#" 0 1128 96 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 24 20 0 0 0 0
+node "m1_71_64#" 0 1410 71 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 30 22 0 0 0 0
+node "m1_46_64#" 0 1692 46 64 m1 0 0 0 0 0 0 0 0 0 0 0 0 36 24 0 0 0 0
+node "m1_12_56#" 0 5452 12 56 m1 0 0 0 0 0 0 0 0 0 0 0 0 116 56 0 0 0 0
+node "EN" 24 2844 -10 27 pc 0 0 0 0 16 16 0 0 0 0 0 0 36 26 0 0 0 0
+subcap "OUTFinal" -3258
+cap "NANDXFin_0/IN2" "inverterX_0/OUT" 872
+cap "NANDXFin_0/IN2" "inverterX_1/OUT" 872
+cap "NANDXFin_0/IN2" "inverterX_2/OUT" 360
+cap "NANDXFin_0/OUT" "NANDXFin_0/IN2" 152
+cap "inverterX_5/OUT" "inverterX_2/OUT" 512
+cap "inverterX_5/OUT" "inverterX_3/OUT" 872
+cap "inverterX_5/OUT" "inverterX_4/OUT" 872
+merge "inverterX_6/GND" "inverterX_5/GND" -2538 0 0 0 0 0 0 0 0 0 0 0 0 -54 -114 0 0 0 0
+merge "inverterX_5/GND" "inverterX_4/GND"
+merge "inverterX_4/GND" "inverterX_3/GND"
+merge "inverterX_3/GND" "inverterX_2/GND"
+merge "inverterX_2/GND" "inverterX_1/GND"
+merge "inverterX_1/GND" "inverterX_0/GND"
+merge "inverterX_0/GND" "NANDXFin_0/GND"
+merge "NANDXFin_0/GND" "m1_15_0#"
+merge "m1_15_0#" "m1_46_0#"
+merge "m1_46_0#" "m1_71_0#"
+merge "m1_71_0#" "m1_96_0#"
+merge "m1_96_0#" "m1_121_0#"
+merge "m1_121_0#" "m1_146_0#"
+merge "m1_146_0#" "m1_171_0#"
+merge "inverterX_5/IN" "inverterX_4/OUT" -188 0 0 0 0 0 0 0 0 0 0 0 0 -4 -18 0 0 0 0
+merge "inverterX_4/OUT" "m1_142_23#"
+merge "inverterX_2/IN" "inverterX_1/OUT" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0
+merge "inverterX_1/OUT" "m1_67_23#"
+merge "inverterX_6/IN" "inverterX_5/OUT" -3112 0 0 0 0 0 0 0 0 0 0 0 0 -8 -28 0 0 0 0
+merge "inverterX_5/OUT" "NANDXFin_0/IN2"
+merge "NANDXFin_0/IN2" "OUTFinal"
+merge "inverterX_3/IN" "inverterX_2/OUT" -188 0 0 0 0 0 0 0 0 0 0 0 0 -4 -18 0 0 0 0
+merge "inverterX_2/OUT" "m1_92_23#"
+merge "inverterX_6/VDD" "inverterX_5/VDD" -1692 0 0 0 0 0 0 0 0 0 0 0 0 -36 -108 0 0 0 0
+merge "inverterX_5/VDD" "inverterX_4/VDD"
+merge "inverterX_4/VDD" "inverterX_3/VDD"
+merge "inverterX_3/VDD" "inverterX_2/VDD"
+merge "inverterX_2/VDD" "inverterX_1/VDD"
+merge "inverterX_1/VDD" "inverterX_0/VDD"
+merge "inverterX_0/VDD" "NANDXFin_0/VDD"
+merge "NANDXFin_0/VDD" "m1_12_56#"
+merge "m1_12_56#" "m1_46_64#"
+merge "m1_46_64#" "m1_71_64#"
+merge "m1_71_64#" "m1_96_64#"
+merge "m1_96_64#" "m1_121_64#"
+merge "m1_121_64#" "m1_146_64#"
+merge "m1_146_64#" "m1_171_64#"
+merge "inverterX_0/IN" "NANDXFin_0/OUT" -376 0 0 0 0 0 0 0 0 0 0 0 0 -8 -20 0 0 0 0
+merge "NANDXFin_0/OUT" "m1_16_20#"
+merge "NANDXFin_0/IN1" "EN" -376 0 0 0 0 0 0 0 0 0 0 0 0 -8 -12 0 0 0 0
+merge "inverterX_1/IN" "inverterX_0/OUT" -188 0 0 0 0 0 0 0 0 0 0 0 0 -4 -18 0 0 0 0
+merge "inverterX_0/OUT" "m1_42_23#"
+merge "inverterX_4/IN" "inverterX_3/OUT" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0
+merge "inverterX_3/OUT" "m1_117_23#"

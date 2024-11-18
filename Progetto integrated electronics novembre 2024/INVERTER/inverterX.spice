@@ -1,0 +1,58 @@
+* SPICE3 file created from inverter.ext - technology: scmos
+
+.include ./Ami05u.txt
+.option scale=1u
+
+*-- VDD
+
+Vpower VDD GND 3.3
+Vin In Gnd pulse(0, 3.3, 1000p, 1500p, 1500p, 10000p) 
+
+*---------
+
+
+M1000 OUT IN VDD Vdd pfet w=26 l=2
++  ad=130 pd=62 as=162 ps=94
+M1001 OUT IN GND Gnd nfet w=10 l=2
++  ad=50 pd=30 as=50 ps=30
+C0 GND Gnd 5.26fF
+C1 IN Gnd 7.28fF
+C2 VDD Gnd 2.77fF
+
+*--- CLOAD
+
+C3 OUT GND 214fF
+
+*--------
+
+*--- TRANSIENT ANALYSIS--
+
+.control
+
+	tran 1p 30n
+	Plot IN OUT
+.endc
+
+*--------
+
+*-- DC ANALYSIS
+
+.control
+	DC Vin 0 3.3 0.01
+	Plot IN OUT
+.endc
+
+*--------
+
+*----- CURRENT ANALYSIS ---
+
+.control
+
+save @M1000[id]
+save @M1001[id]
+tran 1p 30000p
+plot @M1000[id] @M1001[id]
+
+.endc
+*----------
+

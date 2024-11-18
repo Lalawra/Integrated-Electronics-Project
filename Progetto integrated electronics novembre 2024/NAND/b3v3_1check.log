@@ -1,0 +1,4 @@
+BSIM3V3.1 Parameter Check
+Model = nfet
+W = 1e-05, L = 2e-06
+Warning: Pd = 0 is less than W.

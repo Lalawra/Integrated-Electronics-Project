@@ -1,0 +1,41 @@
+* SPICE3 file created from NANDX.ext - technology: scmos
+
+.include ./Ami05u.txt
+.option scale=1u
+
+*-- VDD
+
+Vpower VDD GND 3.3
+Vin IN1 GND 3.3
+Vin2 IN2 GND pulse(0 3.3 2n 2n 2n 100n)
+
+*---------
+
+M1000 OUT IN2 a_n13_1# Gnd nfet w=10 l=2
++  ad=50 pd=30 as=60 ps=32
+M1001 a_n13_1# IN1 GND Gnd nfet w=10 l=2
++  ad=0 pd=0 as=50 ps=30
+M1002 VDD IN2 OUT Vdd pfet w=13 l=2
++  ad=130 pd=72 as=78 ps=38
+M1003 OUT IN1 VDD Vdd pfet w=13 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 GND Gnd 4.70fF
+C1 OUT Gnd 3.95fF
+C2 IN2 Gnd 6.93fF
+C3 IN1 Gnd 6.75fF
+C4 VDD Gnd 5.26fF
+
+*--- CLOAD ---
+
+C5 OUT GND 115fF
+
+*--------
+
+*--- DC ANALYSIS ---
+
+.control
+
+	DC Vin2 0 3.3 0.01
+	Plot IN1 IN2 OUT
+	
+.endc

@@ -1,0 +1,77 @@
+magic
+tech scmos
+timestamp 1715205214
+<< metal1 >>
+rect 12 64 26 70
+rect 46 64 52 70
+rect 71 64 76 70
+rect 96 64 100 70
+rect 121 64 126 70
+rect 146 64 151 70
+rect 171 64 175 70
+rect 12 56 16 64
+rect -6 27 -1 31
+rect 15 27 17 31
+rect 24 24 28 27
+rect 16 23 28 24
+rect 42 23 52 27
+rect 67 23 76 27
+rect 92 23 102 27
+rect 117 23 126 27
+rect 142 23 152 27
+rect 167 23 177 27
+rect 16 20 27 23
+rect 15 0 26 6
+rect 46 0 51 6
+rect 71 0 77 6
+rect 96 0 101 6
+rect 121 0 126 6
+rect 146 0 152 6
+rect 171 0 176 6
+<< metal2 >>
+rect 21 27 171 31
+<< polycontact >>
+rect -10 27 -6 31
+<< m2contact >>
+rect 17 27 21 31
+rect 171 27 175 31
+use NANDXFin  NANDXFin_0 ~/Desktop/prove/NAND
+timestamp 1715202207
+transform 1 0 16 0 1 8
+box -20 -8 0 48
+use inverterX  inverterX_0 ~/Desktop/prove/INVERTER
+timestamp 1707990237
+transform 1 0 40 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_1
+timestamp 1707990237
+transform 1 0 65 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_2
+timestamp 1707990237
+transform 1 0 90 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_3
+timestamp 1707990237
+transform 1 0 115 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_4
+timestamp 1707990237
+transform 1 0 140 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_5
+timestamp 1707990237
+transform 1 0 165 0 1 14
+box -15 -14 7 56
+use inverterX  inverterX_6
+timestamp 1707990237
+transform 1 0 190 0 1 14
+box -15 -14 7 56
+<< labels >>
+rlabel polycontact -8 29 -8 29 3 EN
+rlabel space 40 25 40 25 1 OUTInv1
+rlabel space 65 25 65 25 1 OUTInv2
+rlabel space 86 3 86 3 1 GND
+rlabel space 86 67 86 67 5 VDD
+rlabel metal1 173 26 173 26 1 OUTFinal
+<< end >>
